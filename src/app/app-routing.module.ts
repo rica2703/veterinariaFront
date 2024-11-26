@@ -7,6 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { CitasAdminComponent } from './citas-admin/citas-admin.component';
 import { HistorialComponent } from './historial/historial.component';
+import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
   {
     path:'',component:HomeComponent
@@ -28,7 +29,8 @@ const routes: Routes = [
 },
 {
   path:'historial',component:HistorialComponent
-}
+},
+{path:'perfil',component:PerfilComponent}
 ];
 
 @NgModule({

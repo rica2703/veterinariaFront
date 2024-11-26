@@ -1,0 +1,54 @@
+<div class="cabeza">
+    <img src="img/logo.jpeg" alt="">
+    <div>
+      <a href="/">home</a>
+      <a href="/citas">citas</a>
+      <a href="/crearCuenta">crear cuenta</a>
+      <a href="/login">iniciar sesion</a>
+      <a href="/contact">contactanos</a>
+    </div>
+  </div>
+  
+  <div *ngIf="showAlert" class="modal-alert">
+    <div class="modal-content">
+      <h2>No estás registrado</h2>
+      <p>Por favor, inicia sesión o crea una cuenta para acceder a esta sección.</p>
+      <button (click)="cerrarAlerta()">Entendido</button>
+    </div>
+  </div>
+  
+  <div class="linea"></div>
+  <div *ngIf="!showAlert">
+    <div class="perfil">
+        <img [src]="foto" alt="Foto de perfil">
+        <p>{{ username }}</p>
+        <p>{{ correo }}</p>
+    </div>
+  
+    <div class="card-container">
+      <div *ngFor="let cita of citasFiltradas" class="card">
+        <div class="cabezaCard">
+          <div class="containerUsernameYphoto">
+            <img [src]="cita.foto" alt="foto usuario">
+            <p>{{ cita.username }}</p>
+          </div>
+        </div>
+        <div class="bodyCard">
+          <p><strong>Nombre:</strong> {{ cita.username }}</p>
+          <p><strong>Teléfono:</strong> {{ cita.telefono }}</p>
+          <p><strong>Nombre de la Mascota:</strong> {{ cita.nombreMascota }}</p>
+          <p><strong>Tipo de Animal:</strong> {{ cita.tipoAnimal }}</p>
+          <p><strong>Edad:</strong> {{ cita.edad }}</p>
+          <p><strong>Raza:</strong> {{ cita.raza }}</p>
+          <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
+        </div>
+        <div class="footerCard">
+          <p><strong>Fecha:</strong> {{ cita.fehca | date: 'shortDate' }}</p>
+          <p><strong>Horario:</strong> {{ cita.fehca | date: 'shortTime' }}</p>
+        </div>
+      </div>
+    </div>
+  <button (click)="onLogout()" class="logout">Cerrar Sesión</button>
+
+  </div>
+  

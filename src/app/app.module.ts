@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CitasAdminComponent } from './citas-admin/citas-admin.component';
 import { HistorialComponent } from './historial/historial.component';
-import { LoginPromptComponent } from './login-prompt/login-prompt.component'; 
+import { LoginPromptComponent } from './login-prompt/login-prompt.component';
+import { PerfilComponent } from './perfil/perfil.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { LoginPromptComponent } from './login-prompt/login-prompt.component';
     CitasAdminComponent,
     HistorialComponent,
     LoginPromptComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
