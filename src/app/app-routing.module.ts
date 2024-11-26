@@ -5,9 +5,11 @@ import { CitasComponent } from './citas/citas.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { CitasAdminComponent } from './citas-admin/citas-admin.component';
+import { HistorialComponent } from './historial/historial.component';
 const routes: Routes = [
   {
-    path:'home',component:HomeComponent
+    path:'',component:HomeComponent
   },
   {
     path:'citas',component:CitasComponent
@@ -20,6 +22,12 @@ const routes: Routes = [
   },
 {
   path:'login',component:LoginComponent
+},
+{
+  path:'citasAdmin',component:CitasAdminComponent
+},
+{
+  path:'historial',component:HistorialComponent
 }
 ];
 

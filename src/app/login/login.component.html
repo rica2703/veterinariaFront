@@ -1,8 +1,8 @@
 <div class="login">
-    <img src="img/perfil.jpeg" alt="">
-    <h1>Correo</h1>
-    <input type="email">
+    <img src="img/logo.jpeg" alt="">
+    <h1>username</h1>
+    <input type="text" [(ngModel)]="username">
     <h1>Contraseña</h1>
-    <input type="password" >
-    <button>Iniciar sesion</button>
+    <input type="password" [(ngModel)]="password">
+    <button (click)="onSignin()">Iniciar sesion</button>
 </div>

@@ -1,26 +1,27 @@
 <div class="cabeza">
     <img src="img/logo.jpeg" alt="">
     <div>
-        <a href="/home">home</a>
-        <a href="/citas">citas</a>
-        <a href="/crearCuenta">crear cuenta</a>
-        <a href="/contact">contactanos</a>
+      <a href="/">home</a>
+      <a href="/citas">citas</a>
+      <a href="/crearCuenta">crear cuenta</a>
+      <a href="/login">iniciar sesion</a>
+      <a href="/contact">contactanos</a>
     </div>
-</div>
-<div class="linea"></div>
-<div class="cuerpo">
+  </div>
+  <div class="linea"></div>
+  <div class="cuerpo">
     <div class="formCrearCuenta">
-        <div class="left">
-            <input type="text" placeholder="username">
-            <input type="email" placeholder="correo">
-            <input type="password" placeholder="contraseña">
-            <input type="text" placeholder="nombre de tu mascota">
-        </div>
-        <div class="right">
-            <p>foto de perfil</p>
-            <p>puedes seleccionar la foto de tu mascota</p>
-            <input type="file">
-        </div>
+      <div class="left">
+        <input type="text" placeholder="username" [(ngModel)]="user.username">
+        <input type="email" placeholder="correo" [(ngModel)]="user.email">
+        <input type="password" placeholder="contraseña" [(ngModel)]="user.password">
+      </div>
+      <div class="right">
+        <p>Foto de perfil</p>
+        <p>Puedes seleccionar la foto de tu mascota</p>
+        <input type="file" (change)="onFileSelected($event)">
+      </div>
     </div>
-    <button class="crearCuenta">Crear cuenta</button>
-</div>
+    <button (click)="crearCuenta()" class="crearCuenta">Crear cuenta</button>
+  </div>
+  

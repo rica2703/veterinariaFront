@@ -2,9 +2,10 @@
     <div class="cabeza">
         <img src="img/logo.jpeg" alt="">
         <div>
-            <a href="/home">home</a>
+            <a href="/">home</a>
             <a href="/citas">citas</a>
             <a href="/crearCuenta">crear cuenta</a>
+            <a href="/login">iniciar sesion</a>
             <a href="/contact">contactanos</a>
         </div>
     </div>
@@ -12,25 +13,29 @@
     <div class="seccion3">
         <div class="left">
             <p>nombre del dueño</p>
-            <input type="text" placeholder="Nombre del dueño">
+            <input type="text" placeholder="Nombre del dueño" [(ngModel)]="cita.nombreDueno">
             <p>fecha</p>
-            <input type="date" name="" id="">
+            <input type="date" name="" id="" [(ngModel)]="cita.fecha">
             <p>horario</p>
-            <input type="time" placeholder="hora">
+            <input type="time" placeholder="hora" [(ngModel)]="cita.hora">
             <p>telefono celular</p>
-            <input type="number" placeholder="telefono">
+            <input type="number" placeholder="telefono" [(ngModel)]="cita.telefono">
         </div>
         <div class="right">
             <p>nombre de la mascota</p>
-            <input type="text" placeholder="nombre de la mascota">
+            <input type="text" placeholder="" [(ngModel)]="cita.nombreMascota">
             <p>animal</p>
-            <input type="text" placeholder="canino/felino">
-            <p>estado de la mascota</p>
-            <input type="text" placeholder="estado de tu mascota">
+            <input type="text" placeholder="canino/felino" [(ngModel)]="cita.tipoAnimal">
+            <p>edad de la mascota</p>
+            <input type="text" placeholder="" [(ngModel)]="cita.edad">
             <p>raza de la mazcota</p>
-            <input type="text" placeholder="raza de la mascota">
+            <input type="text" placeholder="" [(ngModel)]="cita.raza">
+            <p>motivo de cita</p>
+            <input type="text" placeholder="" [(ngModel)]="cita.motivo">
             
         </div>
     </div>
-    <button class="crearCita">CREAR CITA</button>
+    <button (click)="onCrearCita()" class="crearCita">CREAR CITA</button>
+    <button (click)="onLogout()" class="logout">Cerrar Sesión</button>
 </div>
+<app-login-prompt *ngIf="showLoginPrompt" (close)="closeLoginPrompt()"></app-login-prompt>

@@ -1,0 +1,144 @@
+.cabeza {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(113, 199, 218);
+}
+
+.cabeza>div>a {
+    border: none;
+    background: none;
+    color: white;
+    margin-left: 5px;
+}
+
+.cabeza>img {
+    width: 70px;
+    border-radius: 100%;
+}
+
+.linea {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 1px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+  }
+.card{
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 2em;
+}
+.cabezaCard{
+    background-color: rgb(88, 132, 220);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+}
+.containerUsernameYphoto{
+    display: flex;
+}
+.containerUsernameYphoto>img{
+    width: 20%;
+    height:100%;
+    border-radius: 100%;
+}
+.bodyCard{
+    display: flex;
+}
+.bodyCard>p{
+    margin: 4px;
+    color: rgb(88, 132, 220);
+}
+.footerCard{
+color: rgb(88, 132, 220);
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+  max-height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .modal-content form input {
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  .botonEliminar{
+    background-image: url('../../../public/img/basura.png');
+    background-size: contain;
+    background-color: white;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  .botonEditar{
+    background-image: url('../../../public/img/lapiz-de-usuario.png');
+    background-size: contain;
+    background-color: white;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }

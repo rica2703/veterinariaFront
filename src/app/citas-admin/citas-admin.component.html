@@ -1,0 +1,75 @@
+<div class="cabeza">
+    <img src="img/logo.jpeg" alt="">
+    <div>
+        <a href="/citas">Citas</a>
+        <a href="/historial">Historial</a>
+        <a href="/login" (click)="cerrarSesion()">Salir</a>
+    </div>
+</div>
+<div class="linea"></div>
+
+<div class="card-container">
+<div *ngFor="let cita of citas" class="card">
+    <div class="cabezaCard">
+      <div class="containerUsernameYphoto">
+        <img [src]="cita.foto" alt="foto usuario">
+        <p>{{ cita.username }}</p>
+      </div>
+      <div>
+        <button class="botonEliminar" (click)="confirmarEliminar(cita._id)"></button>
+        <button class="botonEditar" (click)="mostrarFormulario(cita)"></button>
+      </div>
+    </div>
+    <div class="bodyCard">
+      <p><strong>Nombre:</strong> {{ cita.username }}</p>
+      <p><strong>Teléfono:</strong> {{ cita.telefono }}</p>
+      <p><strong>Nombre de la Mascota:</strong> {{ cita.nombreMascota }}</p>
+      <p><strong>Tipo de Animal:</strong> {{ cita.tipoAnimal }}</p>
+      <p><strong>Edad:</strong> {{ cita.edad }}</p>
+      <p><strong>Raza:</strong> {{ cita.raza }}</p>
+      <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
+    </div>
+    <div class="footerCard">
+      <p><strong>Fecha:</strong> {{ cita.fehca | date: 'shortDate' }}</p>
+      <p><strong>Horario:</strong> {{ cita.fehca | date: 'shortTime' }}</p>
+    </div>
+  </div>
+</div>
+
+  <div *ngIf="citaSeleccionada" class="modal">
+    <div class="modal-content">
+      <h2>Editar Cita</h2>
+      <form (ngSubmit)="guardarEdicion()">
+        <label>Nombre de Usuario</label>
+        <input [(ngModel)]="citaSeleccionada.username" name="username" required>
+        
+        <label>Foto</label>
+        <input [(ngModel)]="citaSeleccionada.foto" name="foto" required>
+        
+        <label>Fecha</label>
+        <input [(ngModel)]="citaSeleccionada.fehca" name="fehca" type="date" required>
+        
+        <label>Teléfono</label>
+        <input [(ngModel)]="citaSeleccionada.telefono" name="telefono" required>
+        
+        <label>Nombre de la Mascota</label>
+        <input [(ngModel)]="citaSeleccionada.nombreMascota" name="nombreMascota" required>
+        
+        <label>Tipo de Animal</label>
+        <input [(ngModel)]="citaSeleccionada.tipoAnimal" name="tipoAnimal" required>
+        
+        <label>Edad</label>
+        <input [(ngModel)]="citaSeleccionada.edad" name="edad" type="number" required>
+        
+        <label>Raza</label>
+        <input [(ngModel)]="citaSeleccionada.raza" name="raza" required>
+        
+        <label>Motivo</label>
+        <input [(ngModel)]="citaSeleccionada.motivo" name="motivo" required>
+        
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="cerrarFormulario()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+  

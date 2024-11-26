@@ -10,6 +10,10 @@ import { CitasComponent } from './citas/citas.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { CitasAdminComponent } from './citas-admin/citas-admin.component';
+import { HistorialComponent } from './historial/historial.component';
+import { LoginPromptComponent } from './login-prompt/login-prompt.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +22,15 @@ import { LoginComponent } from './login/login.component';
     CrearCuentaComponent,
     ContactComponent,
     LoginComponent,
+    CitasAdminComponent,
+    HistorialComponent,
+    LoginPromptComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()

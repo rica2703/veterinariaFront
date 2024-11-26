@@ -1,0 +1,35 @@
+<div class="cabeza">
+    <img src="img/logo.jpeg" alt="">
+    <div>
+        <a href="/citas">Citas</a>
+        <a href="/citasAdmin">administrar citas</a>
+        <a href="/historial">Historial</a>
+        <a href="/login" (click)="cerrarSesion()">Salir</a>
+    </div>
+</div>
+<div class="linea"></div>
+
+<div class="card-container">
+    <div *ngFor="let cita of citas" class="card">
+        <div class="cabezaCard">
+          <div class="containerUsernameYphoto">
+            <img [src]="cita.foto" alt="foto usuario">
+            <p>{{ cita.username }}</p>
+          </div>
+          
+        </div>
+        <div class="bodyCard">
+          <p><strong>Nombre:</strong> {{ cita.username }}</p>
+          <p><strong>Teléfono:</strong> {{ cita.telefono }}</p>
+          <p><strong>Nombre de la Mascota:</strong> {{ cita.nombreMascota }}</p>
+          <p><strong>Tipo de Animal:</strong> {{ cita.tipoAnimal }}</p>
+          <p><strong>Edad:</strong> {{ cita.edad }}</p>
+          <p><strong>Raza:</strong> {{ cita.raza }}</p>
+          <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
+        </div>
+        <div class="footerCard">
+          <p><strong>Fecha:</strong> {{ cita.fehca | date: 'shortDate' }}</p>
+          <p><strong>Horario:</strong> {{ cita.fehca | date: 'shortTime' }}</p>
+        </div>
+      </div>
+    </div>
